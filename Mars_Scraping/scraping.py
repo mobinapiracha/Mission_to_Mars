@@ -17,7 +17,7 @@ def scrape_all():
         "news_paragraph": news_paragraph,
         "featured_image": featured_image(browser),
         "facts": mars_facts(),
-        "last_modified": dt.datetime.now
+        "last_modified": dt.datetime.now()
     }
     
     browser.quit()
@@ -75,7 +75,7 @@ def featured_image(browser):
 
 
 # # Scrape Mars Data: Mars Facts
-def mars_facts(browser): 
+def mars_facts(): 
     try:
         #use 'read_html' to scrape the facts table into a dataframe 
         df = pd.read_html('https://data-class-mars-facts.s3.amazonaws.com/Mars_Facts/index.html')[0]
@@ -86,7 +86,7 @@ def mars_facts(browser):
     df.set_index('description', inplace=True)
     
     # convert dataframe into HTML format, add bootstrap 
-    return df.to_html()
+    return df.to_html(classes="table table-striped")
 
 if __name__=="__main__":
     #If running as script, print scraped data
