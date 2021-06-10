@@ -8,7 +8,7 @@ import lxml
 #Initialize the browser, create a data dictionary and end webdriver to return scraped data
 def scrape_all():
     #set the executable path and initialize a browser.
-    executable_path = {'executable_path': 'C:/Users/Mobeen/.wdm/drivers/chromedriver/win32/89.0.4389.23/chromedriver'}
+    executable_path = {'executable_path': 'C:/Users/Mobeen/.wdm/drivers/chromedriver/win32/91.0.4472.77/chromedriver'}
     browser = Browser('chrome', **executable_path, headless=True)
 
     news_title, news_paragraph = mars_news(browser)
